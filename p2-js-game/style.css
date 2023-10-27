@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+
+
+/*HOME SCREEN*/
+
+
+.home-screen {
+    text-align: center;
+}
+
+.home-screen-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+img {
+    max-width: 800px;
+}
+
+
+input {
+    margin: 20px;
+    width: 400px;
+    height: 40px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.button-container {
+    display: flex;
+}
+
+button:hover {
+    transition: transform 0.3s;
+    transform: scale(1.1);
+}
+
+.start-button,
+.how-to-play-button {
+    height: 55px;
+    width: 195px;
+    background-color: rgb(31, 30, 30);
+    color: whitesmoke;
+    font-size: 30px;
+    margin-inline: 5px;
+    font-family: 'Times New Roman', Times, serif
+}
+
+.popup-window {
+    position: fixed;
+    background-color: black;
+    border: 1px solid white;
+    margin: auto;
+    padding: 10px;
+    display: none;
+    color: whitesmoke;
+}
+
+.popup-window-content {
+    height: 450px;
+    width: 800px;
+    font-size: xx-large;
+    overflow-x: hidden;
+    overflow-y: auto;   
+}
+
+.close-button {
+    height: 50px;
+    width: 100px;
+    background-color: rgb(31, 30, 30);
+    color: whitesmoke;
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 10px;
+}
+
+
+/*BODY*/
+
+
+div.game-container {
+    color: whitesmoke;
+}
+
+.home-button,
+.restart-game-button,
+.end-turn-button {
+    width: 160px;
+    height: 55px;
+    background-color: rgb(31, 30, 30);
+    color: whitesmoke;
+    font-size: 25px;
+    margin-block: 5px;
+    font-family: 'Times New Roman', Times, serif
+}
+
+.deck-area {
+    position: fixed;
+    top: 50%;
+    right: 150px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+
+/*PLAYER*/
+
+
+.player2 {
+    position: absolute;
+    width: 100%;
+    top: 25px;
+}
+
+.player1 {
+    position: fixed;
+    bottom: 25px;
+    width: 100%;
+}
+
+.player-name {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    margin-bottom: 5px;
+}
+
+.player1-info {
+    position: absolute;
+    left: 150px;
+    bottom: 150px;
+}
+
+.player2-info {
+    position: absolute;
+    top: 150px;
+    left: 150px;
+}
+
+.player2-info>p {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.player1-info>p {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.player1-life-bar,
+.player2-life-bar {
+    background: #4CAF50;
+    margin-bottom: 5px;
+}
+
+.player1-life-bar::-webkit-progress-value {
+    background-color: rgb(18, 9, 176);
+}
+
+.player2-life-bar::-webkit-progress-value {
+        background-color: rgb(176, 8, 8);
+}
+
+
+/*CARDS*/
+
+
+.player1-card.contrast,
+.player2-card.contrast {
+    filter: contrast(50%);
+}
+
+.player2-cards,
+.player1-cards {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.player2-card,
+.player1-card {
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    width: 210px;
+    height: 260px;
+    background-color: black;
+}
+
+.player2-card {
+    transform: rotate(180deg);
+}
+
+.player1-card:hover {
+    transition: transform 0.3s;
+    transform: scale(1.04);
+}
+
+
+
+.turn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 45px;
+    color: whitesmoke;
+    /*color: #B08856;*/
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+
+
+@media only screen and (max-width: 1024px) {
+
+    .game-container {
+        zoom: 80%
+    }
+
+    .player2 {
+        top: 30px;
+    }
+
+    .player1 {
+        bottom: 30px;
+    }
+
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MA-LIG-NO!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="home-screen" style="display:block">
+
+        <div class="home-screen-content">
+            <h1 class="title">
+                <img class="title-image" src="resources/maligno.png" alt="Ma-Lig-No!">
+            </h1>
+            <form>
+                <input type="text" name="player-name" class="input-player-name" placeholder="Enter Player Name"
+                    maxlength="14">
+            </form>
+
+            <div class="button-container">
+                <button class="start-button">Start</button>
+                <button class="how-to-play-button">How to play</button>
+            </div>
+            <div class="popup-window">
+
+                <div class="popup-window-content">
+                    <img src="resources/sample.jpg" alt="">
+                </div>
+                <div class="close-button-container">
+                    <button class="close-button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-container" style="display:none">
+
+        <div class="deck-area">
+            <button class="home-button deck-area-button">Exit</button>
+            <br>
+            <button class="restart-game-button deck-area-button">Restart</button>
+            <br>
+            <button class="end-turn-button deck-area-button">End turn</button>
+        </div>
+
+        <div class="player2">
+            <div class="player2-cards">
+                <div class="player2-card" id="player2-card1"></div>
+                <div class="player2-card" id="player2-card2"></div>
+                <div class="player2-card" id="player2-card3"></div>
+            </div>
+            <div class="player2-info">
+                <h2 class="player-name">Enemy</h2>
+                <progress class="player2-life-bar" value="100" max="100"></progress>
+                <p>Life Points: <span class="player2-LP">100</span></p>
+                <p>Energy: <span class="player2-energy">5</span></p>
+            </div>
+        </div>
+
+        <div class="turn">
+            <p class="player1-turn">Your Turn</p>
+            <p class="enemy-turn">Enemy's Turn</p>
+
+        </div>
+
+        <div class="player1">
+            <div class="player1-info">
+                <h2 class="player-name player1-name">Player 1</h2>
+                <progress class="player1-life-bar" value="100" max="100"></progress>
+                <p>Life Points: <span class="player1-LP">100</span></p>
+                <p>Energy: <span class="player1-energy">5</span></p>
+            </div>
+            <div class="player1-cards">
+                <div class="player1-card" id="player1-card1"></div>
+                <div class="player1-card" id="player1-card2"></div>
+                <div class="player1-card" id="player1-card3"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
