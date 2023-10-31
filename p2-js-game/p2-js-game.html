@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MA-LIG-NO!</title>
+    <link rel="icon" href="resources/logo.png" type="image/icon type">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,23 +13,96 @@
 
     <div class="home-screen" style="display:block">
 
-        <div class="home-screen-content">
-            <h1 class="title">
-                <img class="title-image" src="resources/maligno.png" alt="Ma-Lig-No!">
-            </h1>
-            <form>
-                <input type="text" name="player-name" class="input-player-name" placeholder="Enter Player Name"
-                    maxlength="14">
-            </form>
+        <audio id="intro-audio" loop src="audio/intro.mp3"></audio>
 
+        <div id="opening-message-container" class="hide-message">
+            <div class="opening-message">
+                <p>Turn on the volume for an immersive gameplay experience.</p>
+                <button class="ok-button">OK</button>
+            </div>
+        </div>
+
+        <div class="home-screen-content">
+            <div class="title">
+                <img class="title-image" src="resources/maligno.png" alt="Ma-Lig-No!">
+            </div>
+            <div class="input-container">
+                <form>
+                    <input type="text" name="player-name" class="input-player-name" placeholder="Enter Player Name"
+                        maxlength="13">
+                </form>
+            </div>
             <div class="button-container">
                 <button class="start-button">Start</button>
                 <button class="how-to-play-button">How to play</button>
             </div>
-            <div class="popup-window">
 
+            <div class="popup-window">
                 <div class="popup-window-content">
-                    <img src="resources/sample.jpg" alt="">
+                    <div class="popup-instruction">
+                        <h2>Welcome to the world of magic and monsters!</h2>
+                        <p>In this game, you play as a ‘mangkukulam’
+                            who has the power to cast spells and summon dark creatures through the use of cards.</p>
+                        <p>Your goal is to reduce the enemy's life points to zero to emerge victorious.</p>
+                        <p> Here's a quick guide on how to play:</p>
+                        <hr>
+                        <div class="popup-gameplay">
+                            <h1>GAMEPLAY</h1>
+                            <p>1. Both players start their turn with <span class="emphasis">100 life points</span> and
+                                <span class="emphasis">5 energy points.</span>
+                            </p>
+                            <p>2. Each player is randomly assigned <span class="emphasis">three cards</span> each turn.
+                            </p>
+                            <p>3. <span class="emphasis">Attack your opponent</span> by clicking on your cards.</p>
+                            <p>4. Each card costs energy. Once you've used up your energy and cards, click <span
+                                    class="emphasis">'End Turn'</span> to
+                                pass the turn to your opponent.</p>
+                            <p>5. Continue taking turns with your opponent until one of you reduces the other's <span
+                                    class="emphasis">life
+                                    points to zero.</span></p>
+                        </div>
+                        <hr>
+                        <div class="popup-card-types">
+                            <h1>CARD TYPES</h1>
+                            <h3>MALIGNO</h3>
+                            <div class="float">
+                                <img src="resources/tikbalang.png" alt="tikbalang">
+                                <p>These are creature cards that have an assigned attack value and energy cost. You can
+                                    click a Maligno card to attack the enemy. The energy cost of each card varies, so
+                                    make
+                                    sure that you have enough energy before using them.</p>
+                            </div>
+                            <h3 class="random">RANDOM</h3>
+                            <div class="float">
+                                <img src="resources/trap.png" alt="trap">
+                                <p>These cards reveal their true nature when clicked. Random cards cost 2 energy to
+                                    cast.
+                                    When you click a random card, you'll either get a <span
+                                        class="emphasis">Kulam</span>,
+                                    <span class="emphasis">Sumpa</span>, or <span class="emphasis">Agimat</span> card.
+                                </p>
+                            </div>
+                            <h3 class="kulam-title">KULAM</h3>
+                            <div class="float">
+                                <img src="resources/kulam.png" alt="kulam">
+                                <p>Use this card to launch a magical attack against the enemy. Click a Kulam card to
+                                    deal
+                                    damage to the enemy.</p>
+                            </div>
+                            <h3 class="sumpa-title">SUMPA</h3>
+                            <div class="float">
+                                <img src="resources/sumpa.png" alt="sumpa">
+                                <p>Clicking a Sumpa card will decrease your life points. Be careful in clicking this
+                                    card. </p>
+                            </div>
+                            <h3 class="agimat-title">AGIMAT</h3>
+                            <div class="float">
+                                <img src="resources/agimat.png" alt="agimat">
+                                <p>This card adds a certain value to your life points. Clicking an Agimat card can save
+                                    you in a pinch.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="close-button-container">
                     <button class="close-button">Close</button>
@@ -38,6 +112,8 @@
     </div>
 
     <div class="game-container" style="display:none">
+
+        <audio id="game-audio" loop src="audio/game-audio.mp3"></audio>
 
         <div class="deck-area">
             <button class="home-button deck-area-button">Exit</button>
@@ -81,6 +157,42 @@
             </div>
         </div>
     </div>
+
+    <div id="modal1" class="hide1">
+        <div class="modal-container">
+            <div class="modal-content-win">
+                <div class="win">
+                    <p class="line1">Congratulations! You won!</p>
+                    <p class="line2">Isa kang tunay na mamaw!</p>
+                </div>
+                <button class="modal-restart-button">Restart</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="hide2">
+        <div class="modal-container">
+            <div class="modal-content-lose">
+                <div class="lose">
+                    <p class="line1">I'm sorry. You lost!</p>
+                    <p class="line2">Mekus mekus mo nalang yan insan!</p>
+                </div>
+                <button class="modal-restart-button">Restart</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="click-audio" src="audio/click.wav"></audio>
+    <audio id="card-select" src="audio/card.mp3"></audio>
+    <audio id="hover" src="audio/whoosh.wav"></audio>
+    <audio id="player2-audio" src="audio/player2-turn.mp3"></audio>
+    <audio id="win-audio" src="audio/win.mp3"></audio>
+    <audio id="win-audio2" src="audio/win2.mp3"></audio>
+    <audio id="win-audio3" src="audio/win3.mp3"></audio>
+    <audio id="lose-audio" src="audio/lose.mp3"></audio>
+    <audio id="lose-audio2" src="audio/lose2.mp3"></audio>
+    <audio id="button-hover" src="audio/button-hover.mp3"></audio>
+    <audio id="player1-audio" src="audio/turn.mp3"></audio>
 
     <script src="script.js" defer></script>
 </body>

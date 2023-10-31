@@ -7,6 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: black;
+    background-image: url('resources/black-cloud.png');
 }
 
 
@@ -25,22 +26,68 @@ body {
     height: 100vh;
 }
 
+#opening-message-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
-img {
+.opening-message {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    color: whitesmoke;
+    height: 230px;
+    width: 450px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+}
+
+.ok-button {
+    margin-top: 30px;
+    height: 50px;
+    width: 80px;
+    background-color: rgb(31, 30, 30);
+    color: whitesmoke;
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.title-image {
     max-width: 800px;
 }
 
-
 input {
-    margin: 20px;
-    width: 400px;
-    height: 40px;
+    width: 490px;
+    height: 35px;
     text-align: center;
     font-size: 25px;
 }
 
+.input-container {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
 .button-container {
     display: flex;
+    gap: 10px;
 }
 
 button:hover {
@@ -51,30 +98,31 @@ button:hover {
 .start-button,
 .how-to-play-button {
     height: 55px;
-    width: 195px;
+    width: 165px;
     background-color: rgb(31, 30, 30);
     color: whitesmoke;
-    font-size: 30px;
-    margin-inline: 5px;
+    font-size: 27px;
     font-family: 'Times New Roman', Times, serif
 }
 
 .popup-window {
     position: fixed;
     background-color: black;
-    border: 1px solid white;
-    margin: auto;
-    padding: 10px;
     display: none;
-    color: whitesmoke;
 }
 
 .popup-window-content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     height: 450px;
     width: 800px;
-    font-size: xx-large;
     overflow-x: hidden;
-    overflow-y: auto;   
+    overflow-y: auto;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    margin-bottom: 10px;
 }
 
 .close-button {
@@ -84,7 +132,66 @@ button:hover {
     color: whitesmoke;
     font-size: x-large;
     font-family: 'Times New Roman', Times, serif;
-    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.popup-instruction {
+    margin-inline: 50px;
+}
+
+.popup-instruction h1,
+.popup-instruction h2 {
+    padding: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h3 {
+    padding: 30px;
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    margin-left: 200px;
+}
+
+hr {
+    margin-top: 30px;
+}
+
+.float img {
+    margin-top: -50px;
+    float: left;
+    width: 180px;
+    margin-right: 50px;
+}
+
+.float {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.popup-window-content p {
+    padding-block: 10px;
+}
+
+.emphasis {
+    color: red;
+    font-weight: bold;
+}
+
+.random {
+    margin-top: -25px;
+}
+
+.kulam-title {
+    margin-top: 44px;
+}
+
+.sumpa-title {
+    margin-top: 65px;
+}
+
+.agimat-title {
+    margin-top: 95px;
 }
 
 
@@ -170,7 +277,7 @@ div.game-container {
 }
 
 .player2-life-bar::-webkit-progress-value {
-        background-color: rgb(176, 8, 8);
+    background-color: rgb(176, 8, 8);
 }
 
 
@@ -203,16 +310,14 @@ div.game-container {
     background-color: black;
 }
 
-.player2-card {
+/*.player2-card {
     transform: rotate(180deg);
-}
+}*/
 
 .player1-card:hover {
     transition: transform 0.3s;
     transform: scale(1.04);
 }
-
-
 
 .turn {
     display: flex;
@@ -225,12 +330,127 @@ div.game-container {
     font-weight: bold;
     font-size: 45px;
     color: whitesmoke;
-    /*color: #B08856;*/
     font-family: 'Times New Roman', Times, serif;
 }
 
 
+/*MODAL*/
 
+
+#modal1,
+#modal2 {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal1.hide1,
+#modal2.hide2 {
+    display: none !important;
+}
+
+.modal-container {
+    text-align: center;
+    position: relative;
+    background-color: black;
+    width: 600px;
+    height: 300px;
+    padding: 1.5rem;
+    border: 1px solid red;
+    animation: blink 1s;
+    animation-iteration-count: 100;
+}
+
+@keyframes blink { 100% { border-color:whitesmoke; }  }
+
+.modal-content-win,
+.modal-content-lose {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+
+.win>p,
+.lose>p {
+    padding: 5px;
+}
+
+.lose>.line1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(228, 36, 36);
+}
+
+.win>.line1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #d69e5e;
+}
+
+.modal-restart-button {
+    height: 55px;
+    width: 120px;
+    background-color: rgb(31, 30, 30);
+    color: whitesmoke;
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 20px;
+}
+
+.home-screen {
+    background-image: url('resources/black-cloud.png');
+    background-size: cover;
+    -webkit-animation: slidein 47s;
+    animation: slidein 47s;
+
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+@-webkit-keyframes slidein {
+    from {
+        background-position: top;
+        background-size: 3000px;
+    }
+
+    to {
+        background-position: -100px 0px;
+        background-size: 2750px;
+    }
+}
+
+@keyframes slidein {
+    from {
+        background-position: top;
+        background-size: 3000px;
+    }
+
+    to {
+        background-position: -100px 0px;
+        background-size: 2750px;
+    }
+
+}
 
 
 @media only screen and (max-width: 1024px) {
