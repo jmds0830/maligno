@@ -1,0 +1,470 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    background-image: url('resources/black-cloud.png');
+}
+
+
+/*HOME SCREEN*/
+
+
+.home-screen {
+    text-align: center;
+}
+
+.home-screen-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#opening-message-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.opening-message {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    color: whitesmoke;
+    height: 230px;
+    width: 450px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+}
+
+.ok-button {
+    margin-top: 30px;
+    height: 50px;
+    width: 80px;
+    background-color: rgb(31, 30, 30);
+    color: whitesmoke;
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.title-image {
+    max-width: 800px;
+}
+
+input {
+    width: 490px;
+    height: 35px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.input-container {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+button:hover {
+    transition: transform 0.3s;
+    transform: scale(1.1);
+}
+
+.start-button,
+.how-to-play-button {
+    height: 55px;
+    width: 165px;
+    background-color: rgb(31, 30, 30);
+    color: whitesmoke;
+    font-size: 27px;
+    font-family: 'Times New Roman', Times, serif
+}
+
+.popup-window {
+    position: fixed;
+    background-color: black;
+    display: none;
+}
+
+.popup-window-content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    height: 450px;
+    width: 800px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.close-button {
+    height: 50px;
+    width: 100px;
+    background-color: rgb(31, 30, 30);
+    color: whitesmoke;
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+}
+
+.popup-instruction {
+    margin-inline: 50px;
+}
+
+.popup-instruction h1,
+.popup-instruction h2 {
+    padding: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h3 {
+    padding: 30px;
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    margin-left: 200px;
+}
+
+hr {
+    margin-top: 30px;
+}
+
+.float img {
+    margin-top: -50px;
+    float: left;
+    width: 180px;
+    margin-right: 50px;
+}
+
+.float {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.popup-window-content p {
+    padding-block: 10px;
+}
+
+.emphasis {
+    color: red;
+    font-weight: bold;
+}
+
+.random {
+    margin-top: -25px;
+}
+
+.kulam-title {
+    margin-top: 44px;
+}
+
+.sumpa-title {
+    margin-top: 65px;
+}
+
+.agimat-title {
+    margin-top: 95px;
+}
+
+
+/*BODY*/
+
+
+div.game-container {
+    color: whitesmoke;
+}
+
+.home-button,
+.restart-game-button,
+.end-turn-button {
+    width: 160px;
+    height: 55px;
+    background-color: rgb(31, 30, 30);
+    color: whitesmoke;
+    font-size: 25px;
+    margin-block: 5px;
+    font-family: 'Times New Roman', Times, serif
+}
+
+.deck-area {
+    position: fixed;
+    top: 50%;
+    right: 150px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+
+/*PLAYER*/
+
+
+.player2 {
+    position: absolute;
+    width: 100%;
+    top: 25px;
+}
+
+.player1 {
+    position: fixed;
+    bottom: 25px;
+    width: 100%;
+}
+
+.player-name {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    margin-bottom: 5px;
+}
+
+.player1-info {
+    position: absolute;
+    left: 150px;
+    bottom: 150px;
+}
+
+.player2-info {
+    position: absolute;
+    top: 150px;
+    left: 150px;
+}
+
+.player2-info>p {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.player1-info>p {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.player1-life-bar,
+.player2-life-bar {
+    background: #4CAF50;
+    margin-bottom: 5px;
+}
+
+.player1-life-bar::-webkit-progress-value {
+    background-color: rgb(18, 9, 176);
+}
+
+.player2-life-bar::-webkit-progress-value {
+    background-color: rgb(176, 8, 8);
+}
+
+
+/*CARDS*/
+
+
+.player1-card.contrast,
+.player2-card.contrast {
+    filter: contrast(50%);
+}
+
+.player2-cards,
+.player1-cards {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.player2-card,
+.player1-card {
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    width: 210px;
+    height: 260px;
+    background-color: black;
+}
+
+/*.player2-card {
+    transform: rotate(180deg);
+}*/
+
+.player1-card:hover {
+    transition: transform 0.3s;
+    transform: scale(1.04);
+}
+
+.turn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 45px;
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/*MODAL*/
+
+
+#modal1,
+#modal2 {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal1.hide1,
+#modal2.hide2 {
+    display: none !important;
+}
+
+.modal-container {
+    text-align: center;
+    position: relative;
+    background-color: black;
+    width: 600px;
+    height: 300px;
+    padding: 1.5rem;
+    border: 1px solid red;
+    animation: blink 1s;
+    animation-iteration-count: 100;
+}
+
+@keyframes blink { 100% { border-color:whitesmoke; }  }
+
+.modal-content-win,
+.modal-content-lose {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+
+.win>p,
+.lose>p {
+    padding: 5px;
+}
+
+.lose>.line1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(228, 36, 36);
+}
+
+.win>.line1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #d69e5e;
+}
+
+.modal-restart-button {
+    height: 55px;
+    width: 120px;
+    background-color: rgb(31, 30, 30);
+    color: whitesmoke;
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 20px;
+}
+
+.home-screen {
+    background-image: url('resources/black-cloud.png');
+    background-size: cover;
+    -webkit-animation: slidein 47s;
+    animation: slidein 47s;
+
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+@-webkit-keyframes slidein {
+    from {
+        background-position: top;
+        background-size: 3000px;
+    }
+
+    to {
+        background-position: -100px 0px;
+        background-size: 2750px;
+    }
+}
+
+@keyframes slidein {
+    from {
+        background-position: top;
+        background-size: 3000px;
+    }
+
+    to {
+        background-position: -100px 0px;
+        background-size: 2750px;
+    }
+
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+    .game-container {
+        zoom: 80%
+    }
+
+    .player2 {
+        top: 30px;
+    }
+
+    .player1 {
+        bottom: 30px;
+    }
+
+}
