@@ -191,11 +191,11 @@ hr {
 }
 
 .kulam-title {
-    margin-top: 44px;
+    margin-top: 45px;
 }
 
 .sumpa-title {
-    margin-top: 65px;
+    margin-top: 68px;
 }
 
 .agimat-title {
@@ -208,12 +208,17 @@ hr {
 
 div.game-container {
     color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .home-button,
 .restart-game-button,
 .end-turn-button {
-    width: 160px;
+    width: 150px;
     height: 55px;
     background-color: rgb(31, 30, 30);
     color: whitesmoke;
@@ -468,34 +473,145 @@ div.game-container {
 
 }
 
-/*LAPTOP SMALL*/
+
+/*WIDTH*/
 
 
-@media only screen and (min-width: 769px) and (max-width: 1180px) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
 
-
-    .tikbalang-title {
-        margin-bottom: 45px;
+    .deck-area {
+        right: 50px;
     }
-
-    .player1-info {
-        margin-bottom: 135px;
-        zoom: 85%;
+    .player1-info, .player2-info {
+        left: 60px;
     }
+}
 
-    .player2-info {
-        margin-top: 135px;
-        zoom: 85%;
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+
+    .deck-area {
+        right: 30px;
+    }
+    .player1-info, .player2-info {
+        left: 40px;
     }
 }
 
 
-/*TABLET*/
+/*HEIGHT*/
 
 
-@media only screen and (min-width: 426px) and (max-width: 768px) {
+@media only screen and (min-height: 700px) and (max-height: 768px) {
 
-    .tikbalang-title {
-        margin-bottom: 45px;
+    .opening-message,
+    .title,
+    .input-container,
+    .button-container,
+    .popup-window {
+        zoom: 95%;
+    }
+
+    .game-container {
+        zoom: 95%;
+    }
+}
+
+@media only screen and (min-height: 600px) and (max-height: 699px) {
+
+    .opening-message,
+    .title,
+    .input-container,
+    .button-container,
+    .popup-window {
+        zoom: 90%;
+    }
+
+    .game-container {
+        zoom: 90%;
+    }
+
+    .player1-info {
+        margin-bottom: 10px;
+        zoom: 85%;
+    }
+
+    .player2-info {
+        margin-top: 10px;
+        zoom: 85%;
+    }
+}
+
+@media only screen and (min-height: 500px) and (max-height: 599px) {
+
+    .opening-message,
+    .title,
+    .input-container,
+    .button-container,
+    .popup-window {
+        zoom: 80%;
+    }
+
+    .game-container {
+        zoom: 80%;
+    }
+
+    .player1-info {
+        margin-bottom: 10px;
+        zoom: 85%;
+    }
+
+    .player2-info {
+        margin-top: 10px;
+        zoom: 85%;
+    }
+}
+
+@media only screen and (min-height: 400px) and (max-height: 499px) {
+
+    .opening-message,
+    .title,
+    .input-container,
+    .button-container,
+    .popup-window {
+        zoom: 70%;
+    }
+
+    .game-container {
+        zoom: 70%;
+    }
+
+    .player1-info {
+        margin-bottom: 20px;
+        zoom: 85%;
+    }
+
+    .player2-info {
+        margin-top: 20px;
+        zoom: 85%;
+    }
+}
+
+@media only screen and (max-height: 399px) {
+
+    .opening-message,
+    .title,
+    .input-container,
+    .button-container,
+    .popup-window {
+        zoom: 50%;
+    }
+
+    .game-container {
+        zoom: 50%;
+    }
+
+    .player1-info {
+
+        zoom: 85%;
+    }
+
+    .player2-info {
+
+        zoom: 85%;
     }
 }
