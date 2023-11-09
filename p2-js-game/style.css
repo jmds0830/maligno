@@ -523,7 +523,8 @@ div.game-container {
     .title,
     .input-container,
     .button-container,
-    .popup-window {
+    .popup-window,
+    .modal-container {
         zoom: 95%;
     }
 
