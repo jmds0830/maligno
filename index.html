@@ -18,6 +18,7 @@
         <div id="opening-message-container" class="hide-message">
             <div class="opening-message">
                 <p>Turn on the volume for an immersive gameplay experience.</p>
+                <p>Note: This game is more optimized for large screen devices.</p>
                 <button class="ok-button">OK</button>
             </div>
         </div>
@@ -65,15 +66,15 @@
                         <div class="popup-card-types">
                             <h1>CARD TYPES</h1>
                             <h3>MALIGNO</h3>
-                            <div class="float">
-                                <img src="resources/tikbalang.png" alt="tikbalang">
+                            <div class="float tikbalang-title">
+                                <img class="tikbalang-img" src="resources/tikbalang.png" alt="tikbalang">
                                 <p>These are creature cards that have an assigned attack value and energy cost. You can
                                     click a Maligno card to attack the enemy. The energy cost of each card varies, so
                                     make
                                     sure that you have enough energy before using them.</p>
                             </div>
                             <h3 class="random">RANDOM</h3>
-                            <div class="float">
+                            <div class="float trap-title">
                                 <img src="resources/trap.png" alt="trap">
                                 <p>These cards reveal their true nature when clicked. Random cards cost 2 energy to
                                     cast.
@@ -130,7 +131,7 @@
                 <div class="player2-card" id="player2-card3"></div>
             </div>
             <div class="player2-info">
-                <h2 class="player-name">Enemy</h2>
+                <h2 class="player-name player2-name">Enemy</h2>
                 <progress class="player2-life-bar" value="100" max="100"></progress>
                 <p>Life Points: <span class="player2-LP">100</span></p>
                 <p>Energy: <span class="player2-energy">5</span></p>
