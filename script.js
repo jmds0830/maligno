@@ -59,7 +59,7 @@ function removeOpeningMessage() {
     const openingMessage = document.getElementById('opening-message-container');
     setTimeout(() => {
         openingMessage.style.display = 'none';
-    }, 500);  
+    }, 500);
     introAudio.play();
     gameAudio.pause();
 };
@@ -110,6 +110,7 @@ function startGame() {
     setTimeout(player1Turn, 500);
 
     clickAudio.play();
+    gameAudio.play();
 };
 
 gameAudio.volume = 0.7;
@@ -413,6 +414,7 @@ endTurnButton.addEventListener('click', () => {
         setTimeout(player2Turn, 500);
         setTimeout(showTurn, 500);
     }
+    endTurnButton.disabled = true;
 });
 
 function restartGame() {
