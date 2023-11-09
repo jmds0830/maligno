@@ -539,8 +539,7 @@ div.game-container {
     .input-container,
     .button-container,
     .popup-window,
-    .hide1,
-    .hide2 {
+    .modal-container {
         zoom: 90%;
     }
 
@@ -566,8 +565,7 @@ div.game-container {
     .input-container,
     .button-container,
     .popup-window, 
-    .hide1,
-    .hide2 {
+    .modal-container {
         zoom: 80%;
     }
 
@@ -593,8 +591,7 @@ div.game-container {
     .input-container,
     .button-container,
     .popup-window,
-    .hide1,
-    .hide2 {
+    .modal-container {
         zoom: 65%;
     }
 
@@ -620,8 +617,7 @@ div.game-container {
     .input-container,
     .button-container,
     .popup-window,
-    .hide1,
-    .hide2 {
+    .modal-container {
         zoom: 50%;
     }
 
@@ -645,8 +641,7 @@ div.game-container {
     .input-container,
     .button-container,
     .popup-window,
-    .hide1,
-    .hide2 {
+    .modal-container {
         zoom: 40%;
     }
 
@@ -670,8 +665,7 @@ div.game-container {
     .input-container,
     .button-container,
     .popup-window,
-    .hide1,
-    .hide2 {
+    .modal-container {
         zoom: 30%;
     }
 
