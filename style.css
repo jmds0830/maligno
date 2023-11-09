@@ -8,6 +8,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: black;
     background-image: url('resources/black-cloud.png');
+    background-size: auto;
 }
 
 
@@ -49,7 +50,7 @@ body {
     font-family: 'Times New Roman', Times, serif;
     font-size: x-large;
     color: whitesmoke;
-    height: 230px;
+    height: 250px;
     width: 450px;
     top: 50%;
     left: 50%;
@@ -57,8 +58,12 @@ body {
     padding: 20px;
 }
 
+.opening-message>p {
+    margin: 10px;
+}
+
 .ok-button {
-    margin-top: 30px;
+    margin-top: 10px;
     height: 50px;
     width: 80px;
     background-color: rgb(31, 30, 30);
@@ -165,8 +170,11 @@ hr {
 }
 
 .float {
-    margin-bottom: 20px;
     text-align: left;
+}
+
+.tikbalang-title {
+    margin-bottom: 20px;
 }
 
 .popup-window-content p {
@@ -247,12 +255,12 @@ div.game-container {
 .player1-info {
     position: absolute;
     left: 150px;
-    bottom: 150px;
+    bottom: 190px;
 }
 
 .player2-info {
     position: absolute;
-    top: 150px;
+    top: 190px;
     left: 150px;
 }
 
@@ -368,7 +376,11 @@ div.game-container {
     animation-iteration-count: 100;
 }
 
-@keyframes blink { 100% { border-color:whitesmoke; }  }
+@keyframes blink {
+    100% {
+        border-color: whitesmoke;
+    }
+}
 
 .modal-content-win,
 .modal-content-lose {
@@ -414,8 +426,8 @@ div.game-container {
 .home-screen {
     background-image: url('resources/black-cloud.png');
     background-size: cover;
-    -webkit-animation: slidein 47s;
-    animation: slidein 47s;
+    -webkit-animation: slidein 50s;
+    animation: slidein 50s;
 
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
@@ -427,44 +439,63 @@ div.game-container {
     animation-direction: alternate;
 }
 
-@-webkit-keyframes slidein {
-    from {
-        background-position: top;
-        background-size: 3000px;
+
+@media only screen and (min-width: 426px) {
+
+    @-webkit-keyframes slidein {
+        from {
+            background-position: top;
+            background-size: 200% 100%;
+        }
+
+        to {
+            background-position: -100px 0px;
+            background-size: 200% 100%;
+        }
     }
 
-    to {
-        background-position: -100px 0px;
-        background-size: 2750px;
+    @keyframes slidein {
+        from {
+            background-position: top;
+            background-size: 200% 100%;
+        }
+
+        to {
+            background-position: -100px 0px;
+            background-size: 200% 100%;
+        }
+    }
+
+}
+
+/*LAPTOP SMALL*/
+
+
+@media only screen and (min-width: 769px) and (max-width: 1180px) {
+
+
+    .tikbalang-title {
+        margin-bottom: 45px;
+    }
+
+    .player1-info {
+        margin-bottom: 135px;
+        zoom: 85%;
+    }
+
+    .player2-info {
+        margin-top: 135px;
+        zoom: 85%;
     }
 }
 
-@keyframes slidein {
-    from {
-        background-position: top;
-        background-size: 3000px;
+
+/*TABLET*/
+
+
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+
+    .tikbalang-title {
+        margin-bottom: 45px;
     }
-
-    to {
-        background-position: -100px 0px;
-        background-size: 2750px;
-    }
-
-}
-
-
-@media only screen and (max-width: 1024px) {
-
-    .game-container {
-        zoom: 80%
-    }
-
-    .player2 {
-        top: 30px;
-    }
-
-    .player1 {
-        bottom: 30px;
-    }
-
 }
