@@ -48,10 +48,10 @@ body {
     justify-content: center;
     background-color: black;
     font-family: 'Times New Roman', Times, serif;
-    font-size: x-large;
+    font-size: 30px;
     color: whitesmoke;
-    height: 300px;
-    width: 500px;
+    height: 400px;
+    width: 600px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -270,12 +270,12 @@ div.game-container {
 }
 
 .player2-info>p {
-    font-size: 20px;
+    font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
 }
 
 .player1-info>p {
-    font-size: 20px;
+    font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -431,6 +431,8 @@ div.game-container {
 .home-screen {
     background-image: url('resources/black-cloud.png');
     background-size: cover;
+    height: 100vh;
+
     -webkit-animation: slidein 50s;
     animation: slidein 50s;
 
@@ -550,12 +552,10 @@ div.game-container {
 
     .player1-info {
         margin-bottom: 10px;
-        zoom: 85%;
     }
 
     .player2-info {
         margin-top: 10px;
-        zoom: 85%;
     }
 }
 
@@ -575,13 +575,11 @@ div.game-container {
     }
 
     .player1-info {
-        margin-bottom: 10px;
-        zoom: 85%;
+        margin-bottom: -50px;
     }
 
     .player2-info {
-        margin-top: 10px;
-        zoom: 85%;
+        margin-top: -50px;
     }
 }
 
@@ -601,13 +599,11 @@ div.game-container {
     }
 
     .player1-info {
-        margin-bottom: 20px;
-        zoom: 85%;
+        margin-bottom: -50px;
     }
 
     .player2-info {
-        margin-top: 20px;
-        zoom: 85%;
+        margin-top: -50px;
     }
 }
 
@@ -627,11 +623,11 @@ div.game-container {
     }
 
     .player1-info {
-        zoom: 85%;
+        margin-bottom: -50px;
     }
 
     .player2-info {
-        zoom: 85%;
+        margin-top: -50px;
     }
 }
 
@@ -651,11 +647,11 @@ div.game-container {
     }
 
     .player1-info {
-        zoom: 85%;
+        margin-bottom: -50px;
     }
 
     .player2-info {
-        zoom: 85%;
+        margin-top: -50px;
     }
 }
 
@@ -675,16 +671,16 @@ div.game-container {
     }
 
     .deck-area {
-        margin-right: 50px;
+        margin-right: 150px;
     }
 
     .player1-info {
-        margin-left: 50px;
-        zoom: 90%;
+        margin-left: 150px;
+        margin-bottom: -50px;
     }
 
     .player2-info {
-        margin-left: 50px;
-        zoom: 90%;
+        margin-left: 150px;
+        margin-top: -50px;
     }
 }
