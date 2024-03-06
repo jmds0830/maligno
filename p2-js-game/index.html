@@ -1,200 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MA-LIG-NO!</title>
-    <link rel="icon" href="favicon.png" type="image/icon type">
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
+    <link rel="icon" href="favicon.png" type="image/icon type" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="home-screen">
+      <audio id="intro-audio" loop src="audio/intro.mp3"></audio>
 
-        <audio id="intro-audio" loop src="audio/intro.mp3"></audio>
+      <div id="opening-message-container" class="hide-message">
+        <div class="opening-message">
+          <p>Turn on the volume for an immersive gameplay experience.</p>
+          <p>
+            Note: This game is optimized for larger displays. If you are using a
+            mobile device, please switch to landscape mode.
+          </p>
+          <button class="ok-button">OK</button>
+        </div>
+      </div>
 
-        <div id="opening-message-container" class="hide-message">
-            <div class="opening-message">
-                <p>Turn on the volume for an immersive gameplay experience.</p>
-                <p>Note: This game is optimized for larger displays. If you are using a mobile device, please switch to landscape mode.</p>
-                <button class="ok-button">OK</button>
-            </div>
+      <div class="home-screen-content">
+        <div class="title">
+          <img
+            class="title-image"
+            src="resources/maligno.png"
+            alt="Ma-Lig-No!"
+          />
+        </div>
+        <div class="input-container">
+          <form>
+            <input
+              type="text"
+              name="player-name"
+              class="input-player-name"
+              placeholder="Enter Player Name"
+              maxlength="13"
+            />
+          </form>
+        </div>
+        <div class="button-container">
+          <button class="start-button">Start</button>
+          <button class="how-to-play-button">How to play</button>
         </div>
 
-        <div class="home-screen-content">
-            <div class="title">
-                <img class="title-image" src="resources/maligno.png" alt="Ma-Lig-No!">
-            </div>
-            <div class="input-container">
-                <form>
-                    <input type="text" name="player-name" class="input-player-name" placeholder="Enter Player Name"
-                        maxlength="13">
-                </form>
-            </div>
-            <div class="button-container">
-                <button class="start-button">Start</button>
-                <button class="how-to-play-button">How to play</button>
-            </div>
-
-            <div class="popup-window">
-                <div class="popup-window-content">
-                    <div class="popup-instruction">
-                        <h2>Welcome to the world of magic and monsters!</h2>
-                        <p>In this game, you play as a ‘mangkukulam’
-                            who has the power to cast spells and summon dark creatures through the use of cards.</p>
-                        <p>Your goal is to reduce the enemy's life points to zero to emerge victorious.</p>
-                        <p> Here's a quick guide on how to play:</p>
-                        <hr>
-                        <div class="popup-gameplay">
-                            <h1>GAMEPLAY</h1>
-                            <p>1. Both players start their turn with <span class="emphasis">100 life points</span> and
-                                <span class="emphasis">5 energy points.</span>
-                            </p>
-                            <p>2. Each player is randomly assigned <span class="emphasis">three cards</span> each turn.
-                            </p>
-                            <p>3. <span class="emphasis">Attack your opponent</span> by clicking on your cards.</p>
-                            <p>4. Each card costs energy. Once you've used up your energy and cards, <span
-                                    class="emphasis">click 'End Turn'</span> to
-                                pass the turn to your opponent.</p>
-                            <p>5. Continue taking turns with your opponent until one of you reduces the other's <span
-                                    class="emphasis">life
-                                    points to zero.</span></p>
-                        </div>
-                        <hr>
-                        <div class="popup-card-types">
-                            <h1>CARD TYPES</h1>
-                            <div class="tikbalang-title">
-                                <h3>MALIGNO</h3>
-                                <div class="float">
-                                    <img class="tikbalang-img" src="resources/tikbalang.png" alt="tikbalang">
-                                    <p>These are creature cards that have an assigned attack value and energy cost. You
-                                        can
-                                        click a Maligno card to attack the enemy. The energy cost of each card varies,
-                                        so
-                                        make
-                                        sure that you have enough energy before using them.</p>
-                                </div>
-                            </div>
-                            <div class="trap-title">
-                                <h3 class="random">RANDOM</h3>
-                                <div class="float">
-                                    <img src="resources/trap.png" alt="trap">
-                                    <p>These cards reveal their true nature when clicked. Random cards cost 2 energy to
-                                        cast.
-                                        When you click a random card, you'll either get a <span
-                                            class="emphasis">Kulam</span>,
-                                        <span class="emphasis">Sumpa</span>, or <span class="emphasis">Agimat</span>
-                                        card.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="kulam-title">
-                                <h3>KULAM</h3>
-                                <div class="float">
-                                    <img src="resources/kulam.png" alt="kulam">
-                                    <p>Use this card to launch a magical attack against the enemy. Click a Kulam card to
-                                        deal
-                                        damage to the enemy.</p>
-                                </div>
-                            </div>
-                            <div class="sumpa-title">
-                                <h3>SUMPA</h3>
-                                <div class="float">
-                                    <img src="resources/sumpa.png" alt="sumpa">
-                                    <p>Clicking a Sumpa card will decrease your life points. Be careful in clicking this
-                                        card. </p>
-                                </div>
-                            </div>
-                            <div class="agimat-title">
-                                <h3>AGIMAT</h3>
-                                <div class="float">
-                                    <img src="resources/agimat.png" alt="agimat">
-                                    <p>This card adds a certain value to your life points. Clicking an Agimat card can
-                                        save
-                                        you in a pinch.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="popup-window">
+          <div class="popup-window-content">
+            <div class="popup-instruction">
+              <h2>Welcome to the world of magic and monsters!</h2>
+              <p>
+                In this game, you play as a ‘mangkukulam’ who has the power to
+                cast spells and summon dark creatures through the use of cards.
+              </p>
+              <p>
+                Your goal is to reduce the enemy's life points to zero to emerge
+                victorious.
+              </p>
+              <p>Here's a quick guide on how to play:</p>
+              <hr />
+              <div class="popup-gameplay">
+                <h2>GAMEPLAY</h2>
+                <p>
+                  1. Both players start their turn with
+                  <span class="emphasis">100 life points</span> and
+                  <span class="emphasis">5 energy points.</span>
+                </p>
+                <p>
+                  2. Each player is randomly assigned
+                  <span class="emphasis">three cards</span> each turn.
+                </p>
+                <p>
+                  3. <span class="emphasis">Attack your opponent</span> by
+                  clicking on your cards.
+                </p>
+                <p>
+                  4. <span class="emphasis">Each card costs energy.</span> Once
+                  you've used up your energy and cards,
+                  <span class="emphasis">click 'End Turn'</span> to pass the
+                  turn to your opponent.
+                </p>
+                <p>
+                  5. Continue taking turns with your opponent until one of you
+                  reduces the other's
+                  <span class="emphasis">life points to zero.</span>
+                </p>
+              </div>
+              <hr />
+              <div class="popup-card-types">
+                <h2>CARD TYPES</h2>
+                <div class="card-container">
+                  <div class="image-container">
+                    <img
+                      class="tikbalang-img"
+                      src="resources/tikbalang.png"
+                      alt="tikbalang"
+                    />
+                  </div>
+                  <div class="float">
+                    <h3>MALIGNO</h3>
+                    <p>
+                      These are creature cards that have an assigned attack
+                      value and energy cost.
+                    </p>
+                    <p>You can click a Maligno card to attack the enemy.</p>
+                    <p>
+                      The energy cost of each card varies, so make sure that you
+                      have enough energy before using them.
+                    </p>
+                  </div>
                 </div>
-                <div class="close-button-container">
-                    <button class="close-button">Close</button>
+                <div class="card-container">
+                  <div class="image-container">
+                    <img src="resources/trap.png" alt="trap" />
+                  </div>
+                  <div class="float">
+                    <h3 class="random">RANDOM</h3>
+                    <p>These cards reveal their true nature when clicked.</p>
+                    <p>Random cards cost 2 energy to cast.</p>
+                    <p>
+                      When you click a random card, you'll either get a
+                      <span class="emphasis">Kulam</span>,
+                      <span class="emphasis">Sumpa</span>, or
+                      <span class="emphasis">Agimat</span>
+                      card.
+                    </p>
+                  </div>
                 </div>
+                <div class="card-container">
+                  <div class="image-container">
+                    <img src="resources/kulam.png" alt="kulam" />
+                  </div>
+                  <div class="float">
+                    <h3>KULAM</h3>
+                    <p>
+                      A Random card that can be used to attack your opponent.
+                    </p>
+                    <p>
+                      Use this card to launch a magical attack and deal damage
+                      to the enemy.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-container">
+                  <div class="image-container">
+                    <img src="resources/sumpa.png" alt="sumpa" />
+                  </div>
+                  <div class="float">
+                    <h3>SUMPA</h3>
+                    <p>Clicking a Sumpa card will decrease your life points.</p>
+                    <p>
+                      Be careful when clicking Random cards, as you might
+                      encounter this particular card.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-container">
+                  <div class="image-container">
+                    <img src="resources/agimat.png" alt="agimat" />
+                  </div>
+                  <div class="float">
+                    <h3>AGIMAT</h3>
+                    <p>
+                      This Random card adds a certain value to your life points.
+                    </p>
+                    <p>Clicking an Agimat card can save you in a pinch.</p>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="close-button-container">
+            <button class="close-button">Close</button>
+          </div>
         </div>
+      </div>
     </div>
 
-    <div class="game-container" style="display:none">
+    <div class="game-container" style="display: none">
+      <audio id="game-audio" loop src="audio/game-audio.mp3"></audio>
 
-        <audio id="game-audio" loop src="audio/game-audio.mp3"></audio>
+      <div class="player-container">
+        <div class="player-info-container">
+          <div class="player2-info">
+            <h3 class="player-name player2-name">Enemy</h3>
+            <progress class="player2-life-bar" value="100" max="100"></progress>
+            <p>Life Points: <span class="player2-LP">100</span></p>
+            <p>Energy: <span class="player2-energy">5</span></p>
+          </div>
 
-        <div class="deck-area">
-            <button class="home-button deck-area-button">Exit</button>
-            <br>
-            <button class="restart-game-button deck-area-button">Restart</button>
-            <br>
-            <button class="end-turn-button deck-area-button">End turn</button>
+          <div class="player1-info">
+            <h3 class="player-name player1-name">Player 1</h3>
+            <progress class="player1-life-bar" value="100" max="100"></progress>
+            <p>Life Points: <span class="player1-LP">100</span></p>
+            <p>Energy: <span class="player1-energy">5</span></p>
+          </div>
         </div>
 
-        <div class="player2">
-            <div class="player2-cards">
-                <div class="player2-card" id="player2-card1"></div>
-                <div class="player2-card" id="player2-card2"></div>
-                <div class="player2-card" id="player2-card3"></div>
-            </div>
-            <div class="player2-info">
-                <h2 class="player-name player2-name">Enemy</h2>
-                <progress class="player2-life-bar" value="100" max="100"></progress>
-                <p>Life Points: <span class="player2-LP">100</span></p>
-                <p>Energy: <span class="player2-energy">5</span></p>
-            </div>
-        </div>
+        <div class="player-cards-container">
+          <div class="player2-cards">
+            <div class="player2-card" id="player2-card1"></div>
+            <div class="player2-card" id="player2-card2"></div>
+            <div class="player2-card" id="player2-card3"></div>
+          </div>
 
-        <div class="turn">
+          <div class="turn">
             <p class="player1-turn">Your Turn</p>
             <p class="enemy-turn">Enemy's Turn</p>
+          </div>
 
+          <div class="player1-cards">
+            <div class="player1-card" id="player1-card1"></div>
+            <div class="player1-card" id="player1-card2"></div>
+            <div class="player1-card" id="player1-card3"></div>
+          </div>
         </div>
 
-        <div class="player1">
-            <div class="player1-info">
-                <h2 class="player-name player1-name">Player 1</h2>
-                <progress class="player1-life-bar" value="100" max="100"></progress>
-                <p>Life Points: <span class="player1-LP">100</span></p>
-                <p>Energy: <span class="player1-energy">5</span></p>
-            </div>
-            <div class="player1-cards">
-                <div class="player1-card" id="player1-card1"></div>
-                <div class="player1-card" id="player1-card2"></div>
-                <div class="player1-card" id="player1-card3"></div>
-            </div>
+        <div class="deck-area">
+          <button class="home-button deck-area-button">Exit</button>
+          <button class="restart-game-button deck-area-button">Restart</button>
+          <button class="end-turn-button deck-area-button">End turn</button>
         </div>
+        <div class="footerText">
+          <p>© Jhune Michael Segismundo</p>
+        </div>
+      </div>
     </div>
 
     <div id="modal1" class="hide1">
-        <div class="modal-container">
-            <div class="modal-content-win">
-                <div class="win">
-                    <p class="line1">Congratulations! You won!</p>
-                    <p class="line2">Isa kang tunay na mamaw!</p>
-                </div>
-                <button class="modal-restart-button">Restart</button>
-            </div>
+      <div class="modal-container">
+        <div class="modal-content-win">
+          <div class="win">
+            <p class="line1">Congratulations! You won!</p>
+          </div>
+          <button class="modal-restart-button">Restart</button>
         </div>
+      </div>
     </div>
 
     <div id="modal2" class="hide2">
-        <div class="modal-container">
-            <div class="modal-content-lose">
-                <div class="lose">
-                    <p class="line1">I'm sorry. You lost!</p>
-                    <p class="line2">Mekus mekus mo nalang yan insan!</p>
-                </div>
-                <button class="modal-restart-button">Restart</button>
-            </div>
+      <div class="modal-container">
+        <div class="modal-content-lose">
+          <div class="lose">
+            <p class="line1">I'm sorry. You lost!</p>
+          </div>
+          <button class="modal-restart-button">Restart</button>
         </div>
+      </div>
     </div>
 
     <audio id="click-audio" src="audio/click.wav"></audio>
@@ -210,6 +263,5 @@
     <audio id="player1-audio" src="audio/turn.mp3"></audio>
 
     <script src="script.js" defer></script>
-</body>
-
+  </body>
 </html>
